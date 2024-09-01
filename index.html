@@ -3,22 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linkvertise Verification</title>
+    <title>Free Key</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .key-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        #freeKey {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="key-container">
+        <h1>Your Free Key</h1>
+        <p>Copy the key below and paste it into the menu to activate:</p>
+        <div id="freeKey"></div>
+    </div>
+
     <script>
         window.addEventListener('load', () => {
             const urlParams = new URLSearchParams(window.location.search);
-            const completionCode = urlParams.get('completion');
-            const sessionId = urlParams.get('sid');
-
-            if (completionCode === 'success' && sessionId) {
-                window.location.href = `https://lms.vinschool.edu.vn?completion=success&sid=${sessionId}`;
+            const key = urlParams.get('key');
+            if (key) {
+                document.getElementById('freeKey').textContent = key;
             } else {
-                document.body.innerHTML = '<h1>Invalid request</h1>';
+                document.getElementById('freeKey').textContent = 'Key not found';
             }
         });
     </script>
-</head>
-<body>
-    <h1>Verifying...</h1>
 </body>
 </html>
