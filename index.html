@@ -11,7 +11,7 @@
             const sessionId = urlParams.get('sid');
 
             if (completionCode === 'success' && sessionId) {
-                window.location.href = `your-original-website-url?completion=${completionCode}&sid=${sessionId}`;
+                window.location.href = 'https://lms.vinschool.edu.vn?completion=success&sid=' + sessionId;
             } else {
                 document.body.innerHTML = '<h1>Invalid request</h1>';
             }
